@@ -1,0 +1,30 @@
+{
+  "name": "ocular-drift",
+  "version": "0.0.1",
+  "description": "ocular drift is a set of tools to aid with automated visual testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiyanwang/ocular-drift.git"
+  },
+  "keywords": [
+    "automated",
+    "testing",
+    "visual",
+    "selenium",
+    "webdriver",
+    "screenshot"
+  ],
+  "author": "ns@talis.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiyanwang/ocular-drift/issues"
+  },
+  "homepage": "https://github.com/kiyanwang/ocular-drift",
+  "dependencies": {
+    "resemble": "^1.0.3"
+  }
+}
