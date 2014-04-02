@@ -25,6 +25,10 @@
   },
   "homepage": "https://github.com/kiyanwang/ocular-drift",
   "dependencies": {
-    "resemble": "^1.0.3"
+    "resemble": "^1.0.3",
+    "commander": "^2.2.0",
+    "async": "^0.6.2",
+    "follow-redirects": "0.0.3",
+    "request": "^2.34.0"
   }
 }
