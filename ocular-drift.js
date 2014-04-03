@@ -150,7 +150,7 @@ async.series([
             "   table, th, td {" +
             "       border: 1px solid red;" +
             "       vertical-align: top;" +
-            "       text-align: left;" +
+            "       text-align: center;" +
             "   }" +
             "   </style>" +
             "   <body>" +
