@@ -20,8 +20,6 @@ program.on('--help', function(){
     console.log('');
 });
 
-// 5d067fa40112f23b0900da77768fda676357149e
-// 4a104fa12af5f216165ae7e772294a8ddccd4bbf
 if(!program.build || !program.session || !process.env.BROWSERSTACK_TOKEN || !process.env.BROWSERSTACK_USER){
     console.error("\nERROR: You must specify browser stack build id, and session id");
     program.help();
@@ -33,7 +31,8 @@ var CONFIG = {
     BROWSERSTACK_TOKEN: process.env.BROWSERSTACK_TOKEN,
     BROWSERSTACK_USER: process.env.BROWSERSTACK_USER,
     OUTPUT_DIR: "./output",
-    BASELINE_DIR: "./baseline"
+    BASELINE_DIR: "./baseline",
+    TOLERANCE: 0.5
 };
 
 if(program.output){
@@ -47,7 +46,7 @@ var comparisons = [];
 function getRows(){
     var rows = "";
     comparisons.forEach(function(comparison){
-        if(comparison.results.misMatchPercentage > 1){
+        if(comparison.results.misMatchPercentage > CONFIG.TOLERANCE){
             rows += "" +
                 "<tr>" +
                 "   <td>"+comparison.filename+"</td>" +
@@ -125,7 +124,7 @@ async.series([
                     }
                 };
 
-                if(parseFloat(data.misMatchPercentage) > 1){
+                if(parseFloat(data.misMatchPercentage) > CONFIG.TOLERANCE){
                     var base64DataRaw = data.getImageDataUrl();
                     var base64Data = base64DataRaw.replace(/^data:image\/png;base64,/,"");
                     fs.writeFileSync(CONFIG.OUTPUT_DIR+"/diff/"+filename, base64Data , "base64");
