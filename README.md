@@ -1,7 +1,7 @@
 ocular-drift
 ============
 
-Automated visual testing, work in progress.
+Automated visual testing, work in progress, this version is command line, next release will be a service
 
 
 ```
